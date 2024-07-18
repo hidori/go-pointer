@@ -3,36 +3,26 @@
 ## INSTALL
 
 ```go
-go get github.com/hidori/go-pointer@latest
+go get -u github.com/hidori/go-pointer
 ```
 
 ## USAGE
 
-## Of()
-
 ```go
-fmt.Println(pointer.Of(1))
-// returns pointer of value 1
-```
+ // returns pointer of value 1
+ fmt.Println(pointer.Of(1))
 
-## ValueOrDefault()
+ val := 1
 
-```go
-val := 1
-fmt.Println(pointer.ValueOrDefault(&val), 3)
-// 1
+ // returns 1
+ fmt.Println(pointer.ValueOrDefault(&val, 3))
 
-fmt.Println(pointer.ValueOrDefault((int*)(nil)), 3)
-// 3
-```
+ // returns 3
+ fmt.Println(pointer.ValueOrDefault((*int)(nil), 3))
 
-## ValueOrEmpty()
+ // returns 1
+ fmt.Println(pointer.ValueOrEmpty(&val))
 
-```go
-val := 1
-fmt.Println(pointer.ValueOrEmpty(&val))
-// 1
-
-fmt.Println(pointer.ValueOrEmpty((int*)(nil)))
-// 0
+ // returns 0
+ fmt.Println(pointer.ValueOrEmpty((*int)(nil)))
 ```
