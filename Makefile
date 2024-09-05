@@ -9,6 +9,7 @@ format:
 .PHONY: test
 test:
 	go test ./...
+	go run ./example/example.go
 
 .PHONY: mod/download
 mod/download:
