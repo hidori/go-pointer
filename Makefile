@@ -1,3 +1,11 @@
+.PHONY: lint
+lint:
+	docker run --rm -v $$PWD:$$PWD -w $$PWD golangci/golangci-lint:latest-alpine golangci-lint run
+
+.PHONY: format
+format:
+	docker run --rm -v $$PWD:$$PWD -w $$PWD golangci/golangci-lint:latest-alpine golangci-lint run --fix
+
 .PHONY: test
 test:
 	go test ./...
@@ -10,8 +18,12 @@ mod/download:
 mod/tidy:
 	go mod tidy
 
-.PHONY: tag/patch
-tag/patch: test
+.PHONY: mod/update
+mod/update:
+	go get -u ./...
+
+.PHONY: version/patch
+version/patch: test
 	git fetch
 	git checkout main
 	git pull
