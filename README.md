@@ -1,4 +1,4 @@
-# go-pointer
+# Go: pointer
 
 ## INSTALL
 
