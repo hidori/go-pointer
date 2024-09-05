@@ -3,7 +3,7 @@
 ## INSTALL
 
 ```go
-go get -u github.com/hidori/go-pointer
+go get -u github.com/hidori/go-pointer@latest
 ```
 
 ## USAGE

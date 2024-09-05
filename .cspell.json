@@ -1,14 +1,12 @@
 {
   "version": "0.2",
   "language": "en",
-  "ignorePaths": [
-    ".cspell.json",
-    ".golangci.yml"
-  ],
+  "ignorePaths": [".cspell.json", ".golangci.yml"],
   "words": [
     "hidori",
     "hiroaki",
     "interactor",
+    "Println",
     "shibuki",
     "struct",
     "usecase"
@@ -17,10 +15,7 @@
     {
       "languageId": "go",
       "allowCompoundWords": false,
-      "includeRegExpList": [
-        "CStyleComment",
-        "string"
-      ],
+      "includeRegExpList": ["CStyleComment", "string"],
       "ignoreRegExpList": [
         "import\\s*\\((.|[\r\n])*?\\)",
         "import\\s*.*\".*?\"",
