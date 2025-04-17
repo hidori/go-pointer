@@ -3,6 +3,7 @@
   "language": "en",
   "ignorePaths": [".cspell.json", ".golangci.yml"],
   "words": [
+    "golangci",
     "gomod",
     "hidori",
     "hiroaki",

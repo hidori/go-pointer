@@ -8,7 +8,18 @@ go get -u github.com/hidori/go-pointer@latest
 
 ## USAGE
 
+CODE:
+
 ```go
+package main
+
+import (
+ "fmt"
+
+ "github.com/hidori/go-pointer"
+)
+
+func main() {
  // returns pointer of value 1
  fmt.Println(pointer.Of(1))
 
@@ -25,4 +36,15 @@ go get -u github.com/hidori/go-pointer@latest
 
  // returns 0
  fmt.Println(pointer.ValueOrEmpty((*int)(nil)))
+}
+```
+
+OUTPUT:
+
+```text
+0xc000010100
+1
+3
+1
+0
 ```

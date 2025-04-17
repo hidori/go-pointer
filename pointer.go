@@ -13,7 +13,5 @@ func ValueOrDefault[T any](p *T, _default T) T {
 }
 
 func ValueOrEmpty[T any](p *T) T {
-	var v T
-
-	return ValueOrDefault(p, v)
+	return ValueOrDefault(p, *new(T))
 }

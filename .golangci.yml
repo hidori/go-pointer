@@ -1,42 +1,47 @@
+version: "2"
 run:
-  timeout: 5m
-  allow-parallel-runners: true
   tests: false
-
+  allow-parallel-runners: true
 linters:
-  enable-all: true
+  default: all
   disable:
     - cyclop
     - depguard
     - err113
-    - execinquery
     - exhaustive
     - exhaustruct
     - forbidigo
     - funlen
     - gochecknoglobals
-    - gomnd
     - ireturn
     - lll
     - mnd
     - nlreturn
     - revive
-    - stylecheck
     - varnamelen
     - wsl
-
-linters-settings:
-  gocyclo:
-    min-complexity: 20
-
-issues:
-  exclude-use-default: false
-  exclude-generated: lax
-  exclude-dirs-use-default: false
-  exclude-dirs:
-    - cmd
-    - test
-    - example
-  exclude-files:
-    - '(.+)_test\.go'
-    - '(.+)_mock\.go'
+  settings:
+    gocyclo:
+      min-complexity: 20
+  exclusions:
+    generated: lax
+    paths:
+      - (.+)_test\.go
+      - (.+)_mock\.go
+      - cmd
+      - test
+      - example
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - (.+)_test\.go
+      - (.+)_mock\.go
+      - cmd
+      - test
+      - example
